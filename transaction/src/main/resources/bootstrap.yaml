@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: transaction-server
+  cloud:
+    config:
+      enable: true
+      uri: http://localhost:8083
