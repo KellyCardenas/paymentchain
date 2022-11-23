@@ -1,6 +1,6 @@
 spring:
   application:
-    name: transaction-server
+    name: transaction
   cloud:
     config:
       enable: true
