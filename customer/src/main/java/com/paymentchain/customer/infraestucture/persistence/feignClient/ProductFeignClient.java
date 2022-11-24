@@ -11,7 +11,7 @@ import org.w3c.dom.stylesheets.LinkStyle;
 
 import java.util.List;
 
-@FeignClient(name = "product-service", url = "http://localhost:8082")
+@FeignClient(name = "product")
 public interface ProductFeignClient {
 
     @RequestMapping(value = "/products", method = RequestMethod.POST)

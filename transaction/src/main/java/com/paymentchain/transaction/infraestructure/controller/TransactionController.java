@@ -62,8 +62,8 @@ public class TransactionController {
             @ApiResponse(code = 200, message = "OK"),
             @ApiResponse(code = 404, message = "Transaction not found")
     })
-    @GetMapping("/getClient/{id}")
-    public ResponseEntity<TransactionDto> getByIdClient(@PathVariable long id){
+    @GetMapping("/transactionsClient/{id}")
+    public ResponseEntity<List<TransactionDto>> getByIdClient(@PathVariable long id){
         return new ResponseEntity<>(transactionHandler.getByIdClient(id), HttpStatus.OK);
     }
 }

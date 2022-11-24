@@ -38,7 +38,7 @@ public class TransactionHandler {
         transactionService.delete(id);
     }
 
-    public TransactionDto getByIdClient (long id){
+    public List<TransactionDto> getByIdClient (long id){
        return transactionService.getByIdClient(id);
     }
 }

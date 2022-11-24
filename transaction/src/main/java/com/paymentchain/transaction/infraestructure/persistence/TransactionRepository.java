@@ -52,8 +52,8 @@ public class TransactionRepository implements ITransactionRepository {
     }
 
     @Override
-    public TransactionDto getByIdClient(long idClient){
-        return transactionMapper.toTransactionDto(transactionCrudRepository.findByIdClient(idClient));
+    public List<TransactionDto> getByIdClient(long idClient){
+        return transactionMapper.transactionsDto(transactionCrudRepository.findByIdClient(idClient));
     }
 
 }

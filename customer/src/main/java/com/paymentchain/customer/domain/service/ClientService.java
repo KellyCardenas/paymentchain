@@ -66,12 +66,12 @@ public class ClientService {
 
     /*
     public List<TransactionDto> getTransactions (long id){
-        List<TransactionDto> transactions = restTemplate.getForObject("http://localhost:8081/transactions/getClient/" + id, List.class);
+        List<TransactionDto> transactions = restTemplate.getForObject("http://transaction/transactions/getClient/" + id, List.class);
         return transactions;
     }
 
     public List<ProductDto> getProducts (long id){
-        List<ProductDto> products = restTemplate.getForObject("http://localhost:8082/products/getClient/" + id, List.class);
+        List<ProductDto> products = restTemplate.getForObject("http://product/products/getClient/" + id, List.class);
         return products;
     }
     */
@@ -101,6 +101,25 @@ public class ClientService {
             result.put("Products", "Client with out productd");
         else
             result.put("Products", productDtos);
+
+        return result;
+    }
+
+    public Map<String, Object> getClientTransaction (long id){
+
+        Map<String, Object> result = new HashMap<>();
+        ClientDto clientDto = iClientRepository.getClient(id);
+        if(clientDto == null) {
+            result.put("Mensaje", "Client doesn't exist");
+            return result;
+        }
+
+        result.put("Client", clientDto);
+        List<TransactionDto> transactionDtos = transactionFeignClient.getByIdClient(id);
+        if (transactionDtos.isEmpty())
+            result.put("Transactions", "Client with out productd");
+        else
+            result.put("Transactions", transactionDtos);
 
         return result;
     }

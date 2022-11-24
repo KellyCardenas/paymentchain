@@ -49,7 +49,7 @@ public class TransactionService {
         return transactionRepository.save(transactionDto);
     }
 
-    public TransactionDto getByIdClient(long idClient){
+    public List<TransactionDto> getByIdClient(long idClient){
         return transactionRepository.getByIdClient(idClient);
     }
 }

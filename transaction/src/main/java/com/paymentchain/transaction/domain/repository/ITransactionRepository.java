@@ -16,5 +16,5 @@ public interface ITransactionRepository {
 
     void delete(long id);
 
-    TransactionDto getByIdClient(long idClient);
+    List<TransactionDto> getByIdClient(long idClient);
 }
