@@ -66,6 +66,6 @@ public class ClientHandler {
     }
 
     public Map<String, Object> getClientTransaction(long id){
-        return clientService.getClientProducts(id);
+        return clientService.getClientTransaction(id);
     }
 }

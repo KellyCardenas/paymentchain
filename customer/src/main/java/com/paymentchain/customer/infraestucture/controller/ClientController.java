@@ -101,9 +101,9 @@ public class ClientController {
         return new ResponseEntity<>(clientHandler.getClientProducts(idClient), HttpStatus.OK);
     }
 
-    @GetMapping("transactionsAll/{idClient}")
+    @GetMapping("transactionsAll/{id}")
     public ResponseEntity<Map<String, Object>> getAllTransactions(@PathVariable long id){
-        return new ResponseEntity<>(clientHandler.getClientProducts(id), HttpStatus.OK);
+        return new ResponseEntity<>(clientHandler.getClientTransaction(id), HttpStatus.OK);
     }
 
 }
